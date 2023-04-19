@@ -5,7 +5,12 @@ import styles from './page.module.css'
 import tw from 'tailwind-styled-components'
 import mapboxgl from 'mapbox-gl';
 import { useEffect,useState,useRef } from 'react'
-import clogo from 'D:/Project/git/Semi_Project/Images/logo.png'
+
+=======
+import Map from './components/Map'
+import Link from 'next/link';
+import Search from './Search/Search';
+
 
 mapboxgl.accessToken='pk.eyJ1IjoiZGlwdGlzaGl3YW5rYXIyOTEwIiwiYSI6ImNsZ2tvNHd2MTAzNHczZ29teTQ2dGRnNzUifQ.e_mPzKv5Yv8FsHz-Rt0_Vg';
 
