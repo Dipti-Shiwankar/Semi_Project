@@ -5,7 +5,8 @@ import tw from 'tailwind-styled-components'
 mapboxgl.accessToken='pk.eyJ1IjoiZGlwdGlzaGl3YW5rYXIyOTEwIiwiYSI6ImNsZ2tvNHd2MTAzNHczZ29teTQ2dGRnNzUifQ.e_mPzKv5Yv8FsHz-Rt0_Vg';
 
 
-const Map=() =>{
+const Map=(props) =>{
+  
 
     const mapContainer = useRef(null);
   const map = useRef(null);
@@ -21,13 +22,41 @@ useEffect(() => {
       style: 'mapbox://styles/mapbox/streets-v12',
       center: [72.8691, 19.0684],
       zoom: 5,
-    });
+    })
+      if(props.pickupCoordinates){
+    addToMap(map, props.pickupCoordinates)
+      }
 
+      if(props.dropoffCoordinates){
+        addToMap(map, props.dropoffCoordinates)
+      }
+
+      if(props.pickupCoordinates && props.dropoffCoordinates){
+        map.fitBounds([
+          props.dropoffCoordinates,
+          props.pickupCoordinates
+        ],{
+          padding: 60
+        }
+        )
+      }
+  }, [props.pickupCoordinates, props.dropoffCoordinates])
+
+
+  const addToMap  = (map, coordinates) => {
+    const marker1 = new mapboxgl.Marker()
+      .setLngLat(coordinates)
+      .addTo(map);
+    }
     
-  });
-return <Wrapper id='map'></Wrapper>
+
+
+   
+    return <Wrapper id='map'></Wrapper>
 }
+
 export default Map
+
 const Wrapper=tw.div`
-flex-1
+flex-1 h-1/2
 `
