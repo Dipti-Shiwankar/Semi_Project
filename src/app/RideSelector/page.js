@@ -1,6 +1,6 @@
 import React from 'react'
 import tw from 'tailwind-styled-components'
-import { carList } from 'bdata/carList'
+import { carList } from '../Data/carList'
 
 const RideSelector = () => {
   return (
