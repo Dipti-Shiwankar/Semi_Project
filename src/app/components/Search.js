@@ -1,13 +1,22 @@
-import { useRouter } from 'next/router'
-import React from 'react'
+import { useRouter } from 'next/navigation'
+import {  useState } from 'react'
+import Link from 'next/link'
+import tw from 'tailwind-styled-components'
 
 const Search = () => {
+  const [pickup, setPickup] = useState("");
+  const [dropoff, setDropoff] = useState("");
+  
+  console.log(pickup)
+  console.log(dropoff)
     
   return (
     <>
     <Wrapper>
         <ButtonContainer>
+            <Link href="/">
             <BackButton src='https://img.icons8.com/windows/256/long-arrow-left.png' />
+             </Link>
         </ButtonContainer>
         <InputContainer>
         <FromToIcons>
@@ -16,8 +25,15 @@ const Search = () => {
            <Square src =" "/>
         </FromToIcons>
         <InputBoxes>
-           <Input  placeholder ="Enter pickup Location"/>
-           <Input  placeholder= "Where to?"/>
+           <Input  
+           placeholder ="Enter pickup Location"
+           value ={pickup}
+           onChange={(e)=> setPickup(r.target.value)}
+           />
+           <Input  placeholder= "Where to?"
+           value ={dropoff}
+           onChange={(e)=> setDropoff(r.target.value)}
+           />
         </InputBoxes>
         <PlusIcon src=" "/> 
         </InputContainer>
@@ -25,6 +41,18 @@ const Search = () => {
             <StarIcon src=" "/>
              SavedPlaces
         </SavedPlaces>
+        <Link href={{
+          pathname: "/confirm",
+          query:{
+            pickup: pickup,
+            dropoff: dropoff
+          }
+        }}>
+          <ConfirmButtonContainer>
+            Confirm Locations
+          </ConfirmButtonContainer>
+        </Link>
+       
 
         {/**Button Container */}
         {/**Input Container */}
@@ -39,6 +67,10 @@ const Search = () => {
 
 
 export default Search
+
+const ConfirmButtonContainer = tw.div`
+bg-gray text-white text-center mt-2 mx-4 px-4 py-3 text-2xl cursor-pointer
+`
 
 const Wrapper = tw.div`
 bg-gray-200 h-screen
@@ -85,9 +117,9 @@ w-10 h-10 bg-gray-200 rounded-full ml-3
 `
 
 const SavedPlaces = tw.div`
-
+flex items-center bg-red-500 px-4 py-2
 `
 
 const StarIcon = tw.img`
-bg-gray-400 w-10 h-10 p-2 rounded-full
+bg-gray-400 w-10 h-10 p-2 rounded-full mr-2  
 `
