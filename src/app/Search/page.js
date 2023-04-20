@@ -91,7 +91,7 @@ w-10 flex flex-col mr-2 items-center
 `
 
 const InputContainer = tw.div`
-bg-black flex items-center px-4 mb-2
+bg-white flex items-center px-4 mb-2
 `
 
 const Circle = tw.img`
@@ -119,7 +119,7 @@ w-10 h-10 bg-gray-200 rounded-full ml-3
 `
 
 const SavedPlaces = tw.div`
-flex items-center bg-red-500 px-4 py-2
+flex items-center bg-gray-400 px-4 py-2
 `
 
 const StarIcon = tw.img`
