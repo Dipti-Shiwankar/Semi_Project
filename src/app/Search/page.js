@@ -22,25 +22,25 @@ const Search = () => {
         </ButtonContainer>
         <InputContainer>
         <FromToIcons>
-           <Circle src=" "/>
-           <Line src= " "/>
-           <Square src =" "/>
+           <Circle src=" https://www.linkpicture.com/q/circle-xxl-removebg-preview_2.png"/>
+           <Line src= "https://www.pngplay.com/wp-content/uploads/8/Vertical-Line-No-Background.png "/>
+           <Square src ="https://www.linkpicture.com/q/images-removebg-preview_68.png "/>
         </FromToIcons>
         <InputBoxes>
            <Input  
            placeholder ="Enter pickup Location"
            value ={pickup}
-           onChange={(e)=> setPickup(r.target.value)}
+           onChange={(e)=> setPickup(e.target.value)}
            />
            <Input  placeholder= "Where to?"
            value ={dropoff}
-           onChange={(e)=> setDropoff(r.target.value)}
+           onChange={(e)=> setDropoff(e.target.value)}
            />
         </InputBoxes>
-        <PlusIcon src=" "/> 
+        <PlusIcon src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Plus_symbol.svg/500px-Plus_symbol.svg.png "/> 
         </InputContainer>
         <SavedPlaces>
-            <StarIcon src=" "/>
+            <StarIcon src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOKeiD2-vJdxw8ewTivvBgFSiB9YemMROPMCFyzXSZrKMXe8zgB_SXC3i0Xz0cJnj-uCk&usqp=CAU "/>
              SavedPlaces
         </SavedPlaces>
         <Link href={{
@@ -82,8 +82,8 @@ const ButtonContainer = tw.div`
 bg-gray px-4
 `
 
-const BackButton = tw.div`
-h-12
+const BackButton = tw.img`
+h-12 black
 `
 
 const FromToIcons = tw.div`

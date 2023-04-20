@@ -7,7 +7,7 @@ import RideSelector from '../RideSelector/page'
 
 const Confirm = () => {
     const router = useRouter()
-    const { pickup, dropoff } = router.query
+    const { pickup, dropoff } = router.query || {};
 
     const [ pickupCoordinates, setPickupCoordinates ] = useState()
     const [ dropoffCoordinates, setDropoffCoordinates ] = useState()
