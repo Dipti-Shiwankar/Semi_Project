@@ -5,11 +5,9 @@ import styles from './page.module.css'
 import tw from 'tailwind-styled-components'
 import mapboxgl from 'mapbox-gl';
 import { useEffect,useState,useRef } from 'react'
-
-=======
-import Map from './components/Map'
+import Map from '../app/components/Map'
 import Link from 'next/link';
-import Search from './Search/Search';
+import Search from './Search/page';
 
 
 mapboxgl.accessToken='pk.eyJ1IjoiZGlwdGlzaGl3YW5rYXIyOTEwIiwiYSI6ImNsZ2tvNHd2MTAzNHczZ29teTQ2dGRnNzUifQ.e_mPzKv5Yv8FsHz-Rt0_Vg';
@@ -19,24 +17,7 @@ mapboxgl.accessToken='pk.eyJ1IjoiZGlwdGlzaGl3YW5rYXIyOTEwIiwiYSI6ImNsZ2tvNHd2MTA
 
 export default function Home() {
 
-  const mapContainer = useRef(null);
-const map = useRef(null);
-const [lng, setLng] = useState(-70.9);
-const [lat, setLat] = useState(42.35);
-const [zoom, setZoom] = useState(9);
 
-
-  useEffect(() => {
-    
-    const map = new mapboxgl.Map({
-      container:"map",
-      style: 'mapbox://styles/drakosi/ckvcwq3rwdw4314o3i2ho8tph',
-      center: [72.8691, 19.0684],
-      zoom: 7,
-    });
-
-    
-  });
 
   return (
     <Wrapper>
@@ -71,9 +52,7 @@ const [zoom, setZoom] = useState(9);
 const Wrapper = tw.div`
 flex flex-col h-screen
 `
-const Map = tw.div`
-flex-1
-`
+
 const ActionItem = tw.div`
 flex-1 p-4
 `  
