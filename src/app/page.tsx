@@ -5,9 +5,7 @@ import styles from './page.module.css'
 import tw from 'tailwind-styled-components'
 import mapboxgl from 'mapbox-gl';
 import { useEffect,useState,useRef } from 'react'
-
-=======
-import Map from './components/Map'
+import Map from '../app/components/Map'
 import Link from 'next/link';
 import Search from './Search/Search';
 
@@ -70,9 +68,6 @@ const [zoom, setZoom] = useState(9);
 
 const Wrapper = tw.div`
 flex flex-col h-screen
-`
-const Map = tw.div`
-flex-1
 `
 const ActionItem = tw.div`
 flex-1 p-4
