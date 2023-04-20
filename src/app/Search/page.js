@@ -1,3 +1,5 @@
+"use client";
+
 import { useRouter } from 'next/navigation'
 import {  useState } from 'react'
 import Link from 'next/link'
@@ -28,11 +30,11 @@ const Search = () => {
            <Input  
            placeholder ="Enter pickup Location"
            value ={pickup}
-           onChange={(e)=> setPickup(r.target.value)}
+           onChange={(e)=> setPickup(e.target.value)}
            />
            <Input  placeholder= "Where to?"
            value ={dropoff}
-           onChange={(e)=> setDropoff(r.target.value)}
+           onChange={(e)=> setDropoff(e.target.value)}
            />
         </InputBoxes>
         <PlusIcon src=" "/> 
@@ -69,7 +71,7 @@ const Search = () => {
 export default Search
 
 const ConfirmButtonContainer = tw.div`
-bg-gray text-white text-center mt-2 mx-4 px-4 py-3 text-2xl cursor-pointer
+bg-gray text-black text-center mt-2 mx-4 px-4 py-3 text-2xl cursor-pointer
 `
 
 const Wrapper = tw.div`
@@ -89,7 +91,7 @@ w-10 flex flex-col mr-2 items-center
 `
 
 const InputContainer = tw.div`
-bg-white flex items-center px-4 mb-2
+bg-black flex items-center px-4 mb-2
 `
 
 const Circle = tw.img`
